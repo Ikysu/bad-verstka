@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,300');
+
+#root {
+  max-width: 1280px;
+  width:100%;
+  font-family: 'Open Sans', sans-serif;
+  margin: auto;
+}
+
+.App {
+  padding: 3em 4em;
+}
+
+@media screen and ( max-width: 900px) {
+  .App {
+    padding: 2em 1em;
+  }
+  #root {
+    max-width:none
+  }
+}
+
+.Cards {
+  display: grid;
+ 
+  --grid-layout-gap: 1em;
+  --grid-column-count: 3;
+  --grid-item--min-width: 250px;
+
+  /**
+   * Calculated values.
+   */
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+  grid-gap: var(--grid-layout-gap);
+}
+
+.sorter {
+  margin: 2em 0;
+  height:2em;
+  display:flex
+}
+
+.alt-sorter {
+  display:none;
+  margin: 2em 0;
+  height:2em;
+}
+
+@media screen and ( max-width: 700px) {
+  .sorter {
+    display:none
+  }
+  .alt-sorter {
+    display: block;
+  }
+}
+
+.sort {
+  padding: .5em 1em;
+  margin-right: 1em;
+  color:#555555;
+  border: 1px solid #555555;
+  border-radius: .5em;
+  display: flex;
+  align-items: center;
+}
+
+.sort-selected {
+  color:#24AB70;
+  border: 1px solid #24AB70;
+}

@@ -1,0 +1,12 @@
+.Info {
+  margin-top:5rem;
+  max-width: 480px;
+}
+
+.name {
+  font-size: xxx-large;
+}
+
+.desc {
+  color:var(--color-second);
+}

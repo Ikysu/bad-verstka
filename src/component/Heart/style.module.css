@@ -1,0 +1,7 @@
+.Heart {
+  color: #E5E5E5;
+}
+
+.selected {
+  color: var(--color-primary);
+}
